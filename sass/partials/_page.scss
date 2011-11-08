@@ -1,0 +1,122 @@
+@import "compass/css3";
+
+//-----------------------------------------------
+// The following html5-boilerplate styles should
+// probably be customized for each site
+//-----------------------------------------------
+
+body, select, input, textarea {
+  color: $font-color;
+  // Set your base font here, to apply evenly
+  // font-family: Georgia, serif;
+}
+
+//Headers (h1, h2, etc) have no default font-size or margin; define those yourself
+h1, h2, h3, h4, h5, h6 {
+  // Bold might not be the best choice if you are
+  // embedding a @font-face that's already bold
+  font-weight: bold;
+}
+
+a, a:active, a:visited { color: $link-color; }
+a:hover { color: $link-hover-color; }
+
+strong, th {
+  font-weight: bold;
+}
+
+small {
+  // Use font-size mixin to convert to percentage for YUI
+  // http://developer.yahoo.com/yui/3/cssfonts/#fontsize
+  @include font-size(11px);  // approx 85% when base-font-size eq 13px
+}
+
+// Add the 'required' attribute on your
+// inputs if you want to use these
+input:valid, textarea:valid {}
+input:invalid, textarea:invalid {
+  @include border-radius(1px);
+  @include single-box-shadow(red, 0, 0, 5px, 0);
+}
+.no-boxshadow input:invalid,
+.no-boxshadow textarea:invalid { background-color: #f0dddd; }
+
+
+//-----------------------------------
+// Add your own custom styles below
+//-----------------------------------
+
+body {
+  background: #fafafa;
+}
+
+#container {}
+
+header {}
+
+#main {
+  width: 90em;
+  margin: 0px auto;
+  padding: 10em 0;
+  img[width='400'] {
+    display: none;
+    margin: 0px auto;
+  }
+}
+
+div.fan-c-cc {
+  width: 380px;
+  @include background(linear-gradient(rgba(0,0,0,.78),rgba(0,0,0,.9)));
+  border: 1px solid rgba(0,0,0,0.2);
+  border-bottom-width: 2px;
+  @include box-shadow(rgba(0,0,0,.1) 0 4px 10px -2px);
+  @include border-radius(1.5em);
+  height: 240px;
+  margin: 0px auto;
+  @include animate(fadeOutRightBig, 1s, 1s);
+  fieldset {
+    position: relative;
+    top: 100px;
+    margin: 1em;
+  }
+  input {
+//    display: none;
+    font-family: 'Aldrich', sans-serif;
+    border: none;
+    background: none;
+    @include text-shadow(rgba(0,0,0,.8) 0 2px 0);
+    color: rgba(255,255,255,.95);
+    @include transition(all .5s);
+    &:hover {
+      cursor: pointer;
+      color: yellow;
+    }
+    &:focus {
+      outline: none;
+    }
+    &.fan-c-cc_num {
+      font-size: 2.5em;
+    }
+    &.fan-c-cc_first-name,
+    &.fan-c-cc_last-name {
+      font-size: 1.25em;
+    }
+    &.fan-c-cc_first-name {
+      width: 5em;
+    }
+  }
+}
+form.fan-c-cc {
+  .submit {
+    text-align: center;
+    margin: 2em 0;
+    input {
+      font-size: 2em;
+      background: none;
+      border: 1px solid rgba(0,0,0,0.5);
+      @include border-radius(.25em);
+    }
+  }
+}
+
+footer {}
